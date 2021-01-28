@@ -44,7 +44,7 @@ del, dfn, em, img, ins, kbd, q, samp,
 small, strong, sub, sup, var,
 b, i,
 dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
+fieldset, form, label, legend, input,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section, summary,
@@ -84,7 +84,6 @@ code, kbd, pre, samp {
 }
 
 pre {
-    white-space: pre;
     white-space: pre-wrap;
     word-wrap: break-word;
 }
@@ -633,17 +632,20 @@ img.pull-left {
     -khtml-border-radius: 3px;
     border-radius: 3px;
 }
+
 #topbutton::after {
     font-family: serif;
     font-weight: normal;
     font-style: normal;
     color: #fff;
 }
+
 #topbutton:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
+
 #topbutton:active {
-  background-color: #043726;
+    background-color: #043726;
 }
 
 #topbutton.show {
@@ -770,16 +772,16 @@ iframe {
 input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus,
-textarea:focus{
+textarea:focus {
     color: #B3B7BC;
     background-color: #3d4145;
 }
 
-textarea, iframe{
+textarea, iframe {
     min-height: 220px;
 }
 
-label,
+label,input,
 legend {
     font: 16px/24px 'opensans-bold', sans-serif;
     margin: 12px 0;

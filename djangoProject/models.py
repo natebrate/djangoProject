@@ -10,5 +10,6 @@ class User(models.Model):
     Subject = models.CharField(max_length=200)
     Message = models.CharField(max_length=500)
 
-    def __str__(self):
-        return self.Name + self.Email + self.Subject + self.Message
+
+def __str__(self):
+    return self.Name + self.Email + self.Subject + self.Message

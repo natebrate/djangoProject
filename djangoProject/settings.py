@@ -30,12 +30,14 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-DEFAULT_FROM_EMAIL = 'nsbrathwaite18@outlook.com'
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
-EMAIL_USE_TLS = False
-EMAIL_PORT = 1025
+# EMAIL SETTINGS
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp-mail.outlook.com'
+EMAIL_HOST_USER = 'nsbrathwaite18@outlook.com'
+EMAIL_HOST_PASSWORD = 'ndwkmohcccwqabtz'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -126,3 +128,4 @@ STATIC_URL = '/staticfiles/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'staticfiles/')
 ]
+

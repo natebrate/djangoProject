@@ -22,10 +22,10 @@
     ================================================== -->
     <link rel="stylesheet" href="{% static '../staticfiles/css/default.css' %}?ver=2">
 	<link rel="stylesheet" href="{% static '../staticfiles/css/layout.css' %}?ver=2">
-    <link rel="stylesheet" href="{%  static '../staticfiles/css/media-queries.css' %}">
-    <link rel="stylesheet" href="{%  static '../staticfiles/css/magnific-popup.css' %}">
-    <link rel="stylesheet" href="{% static 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' %}">
-    <link href="{% static 'https://fonts.googleapis.com/css?family=Merriweather:400,900,900i' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static '../staticfiles/css/media-queries.css' %}">
+    <link rel="stylesheet" href="{% static '../staticfiles/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i" rel="stylesheet">
    <!-- Script
    ================================================== -->
 	<script src="{% static '../staticfiles/js/modernizr.js' %}"></script>
@@ -93,7 +93,7 @@
 
          <div class="three columns">
 
-            <img class="profile-pic" src="../staticfiles/images/profilepicture.jpg" alt="Profile Picture" />
+            <img class="profile-pic" src="{% static '../staticfiles/images/profilepicture.jpg' %}" alt="Profile Picture" />
 
          </div>
 
@@ -266,7 +266,7 @@
 
 				   <ul class="skills">
 					   <li><span class="bar-expand photoshop"></span><em>Photoshop</em></li>
-                  <li><span class="bar-expand illustrator"></span><em>MVC Model</em></li>
+                        <li><span class="bar-expand illustrator"></span><em>MVC Model</em></li>
 						<li><span class="bar-expand wordpress"></span><em>Django</em></li>
 						<li><span class="bar-expand css"></span><em>Spring Boot</em></li>
 						<li><span class="bar-expand html5"></span><em>HTML/CSS</em></li>
@@ -290,9 +290,7 @@
 
          <div class="twelve columns collapsed">
 
-            <h1>Some Samples of my Graphic Works and Projects</h1>
-             <h1> Check out My <a class="smoothscroll" href="https://github.com/natebrate">GitHub</a></h1>
-
+            <h1>Some Samples of my Graphic Work and Projects. Check out My <a class="smoothscroll" href="https://github.com/natebrate">GitHub</a></h1>
             <!-- portfolio-wrapper -->
             <div id="portfolio-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
 
@@ -368,7 +366,7 @@
                   <div class="item-wrap">
 
                      <a href="#modal-05" title="">
-                        <img alt="" src="../staticfiles/images/portfolio/skyline.png">
+                        <img alt="" src="{% static '../staticfiles/images/portfolio/skyline.png' %}">
                         <div class="overlay">
                            <div class="portfolio-item-meta">
           					      <h5>Skyline</h5>
@@ -610,7 +608,7 @@
 
             <div class="ten columns">
 
-                  <p class="lead">Reach out and let us get in touch. I promise you will be satisfied with the product we create. You can reach me at the contacts provided or
+                  <p class="lead">Reach out - {{ contactName }} and let us get in touch. I promise you will be satisfied with the product we create. You can reach me at the contacts provided or
                       in the form below
                   </p>
 
@@ -623,8 +621,10 @@
             <div class="eight columns">
 
                <!-- form -->
-               <form action="" method="post" id="contactForm" name="contactForm">
-					<fieldset>
+               <form action="{% url "contact" %}" method="post"
+                     id="contactForm" name="contactForm">
+					{% csrf_token %}
+                   <fieldset>
 
                   <div>
 						   <label for="contactName">Name <span class="required">*</span></label>
@@ -647,7 +647,7 @@
                   </div>
 
                   <div>
-                     <button class="submit">Submit</button>
+                     <input size="35" type="submit" value="Submit" />
                      <span id="image-loader">
                         <img alt="" src="{% static '../staticfiles/images/loader.gif' %}">
                      </span>
@@ -681,9 +681,10 @@
 
                    <hr />
                    <div>
-                       <iframe height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=1000&amp;hl=en&amp;q=bridgetown+(My%20Business%20Name)&amp;t=&amp;z=11&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
-
-                    </iframe><a href="https://www.maps.ie/route-planner.htm">Google Route Planner</a>
+                       <iframe height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                               src="https://maps.google.com/maps?width=100%25&amp;height=1000&amp;hl=en&amp;q=bridgetown+(My%20Business%20Name)&amp;t=&amp;z=11&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+                        </iframe>
+                       <a href="https://www.planetware.com/tourist-attractions/barbados-bar.htm">Places in Barbados</a>
 
 
                    </div>
@@ -728,15 +729,15 @@
 
    <!-- Java Script
    ================================================== -->
-   <script src="{% static 'http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js' %}"></script>
-   <script>window.jQuery || document.write('<script src="../staticfiles/js/jquery-1.10.2.min.js"><\/script>')</script>
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   <script>window.jQuery || document.write('<script src="{% static '../staticfiles/js/jquery-1.10.2.min.js' %}"><\/script>')</script>
    <script type="text/javascript" src="../staticfiles/js/jquery-migrate-1.2.1.min.js"></script>
 
-   <script src="../staticfiles/js/jquery.flexslider.js"></script>
-   <script src="../staticfiles/js/waypoints.js"></script>
-   <script src="../staticfiles/js/jquery.fittext.js"></script>
-   <script src="../staticfiles/js/magnific-popup.js"></script>
-   <script src="../staticfiles/js/init.js"></script>
+   <script src="{% static '../staticfiles/js/jquery.flexslider.js' %}"></script>
+   <script src="{% static '../staticfiles/js/waypoints.js' %}"></script>
+   <script src="{% static '../staticfiles/js/jquery.fittext.js' %}"></script>
+   <script src="{% static '../staticfiles/js/magnific-popup.js' %}"></script>
+   <script src="{% static '../staticfiles/js/init.js' %}"></script>
 
 <!--Floating button-->
 <script>
