@@ -48,7 +48,7 @@ fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section, summary,
-time, mark, audio, video {
+time, mark, audio, video, iframe {
     margin: 0;
     padding: 0;
     border: 0;
@@ -609,7 +609,49 @@ img.pull-left {
 }
 
 /*  6. Buttons  --------------------------------------------------------- */
+#topbutton {
+    display: inline-block;
+    text-align: center;
+    position: fixed;
+    bottom: 30px;
+    height: auto;
+    background-color: #0F9095;
+    padding: 10px;
+    right: 30px;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
 
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    border-radius: 3px;
+}
+#topbutton::after {
+    font-family: serif;
+    font-weight: normal;
+    font-style: normal;
+    color: #fff;
+}
+#topbutton:hover {
+  cursor: pointer;
+}
+#topbutton:active {
+  background-color: #043726;
+}
+
+#topbutton.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Rest of the buttons */
 .button,
 .button:visited,
 button,
@@ -707,6 +749,20 @@ select {
 
 }
 
+iframe {
+    display: block;
+    margin: 0 0 20px 0;
+    border: 0;
+    outline: none;
+    vertical-align: middle;
+    min-width: 225px;
+    max-width: 100%;
+    font-size: 15px;
+    line-height: 24px;
+    color: #647373;
+    background: #D3D9D9;
+}
+
 /* select { padding: 0;
    width: 220px;
    } */
@@ -714,12 +770,12 @@ select {
 input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus,
-textarea:focus {
+textarea:focus{
     color: #B3B7BC;
     background-color: #3d4145;
 }
 
-textarea {
+textarea, iframe{
     min-height: 220px;
 }
 

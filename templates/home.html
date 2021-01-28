@@ -10,7 +10,7 @@
    <!--- Basic Page Needs
    ================================================== -->
    <meta charset="utf-8">
-	<title>Ceevee - Free Responsive HTML5/CSS3 Template</title>
+	<title>Nathan's Portfolio</title>
 	<meta name="description" content="">
 	<meta name="author" content="">
 
@@ -20,11 +20,12 @@
 
 	<!-- CSS
     ================================================== -->
-   <link rel="stylesheet" href="{% static '../staticfiles/css/default.css' %}?ver=2">
+    <link rel="stylesheet" href="{% static '../staticfiles/css/default.css' %}?ver=2">
 	<link rel="stylesheet" href="{% static '../staticfiles/css/layout.css' %}?ver=2">
-   <link rel="stylesheet" href="{%  static '../staticfiles/css/media-queries.css' %}">
-   <link rel="stylesheet" href="{%  static '../staticfiles/css/magnific-popup.css' %}">
-
+    <link rel="stylesheet" href="{%  static '../staticfiles/css/media-queries.css' %}">
+    <link rel="stylesheet" href="{%  static '../staticfiles/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' %}">
+    <link href="{% static 'https://fonts.googleapis.com/css?family=Merriweather:400,900,900i' %}" rel="stylesheet">
    <!-- Script
    ================================================== -->
 	<script src="{% static '../staticfiles/js/modernizr.js' %}"></script>
@@ -36,6 +37,8 @@
 </head>
 
 <body>
+
+<a id="topbutton" class="fa fa-arrow-circle-up"></a>
 
    <!-- Header
    ================================================== -->
@@ -51,7 +54,7 @@
             <li><a class="smoothscroll" href="#about">About</a></li>
 	         <li><a class="smoothscroll" href="#resume">Resume</a></li>
             <li><a class="smoothscroll" href="#portfolio">Projects</a></li>
-            <li><a class="smoothscroll" href="#testimonials">Testimonials</a></li>
+            <li><a class="smoothscroll" href="#testimonials">Quotes</a></li>
             <li><a class="smoothscroll" href="#contact">Contact</a></li>
          </ul> <!-- end #nav -->
 
@@ -288,6 +291,7 @@
          <div class="twelve columns collapsed">
 
             <h1>Some Samples of my Graphic Works and Projects</h1>
+             <h1> Check out My <a class="smoothscroll" href="https://github.com/natebrate">GitHub</a></h1>
 
             <!-- portfolio-wrapper -->
             <div id="portfolio-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
@@ -573,11 +577,9 @@
 
                      <li>
                         <blockquote>
-                           <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
-                           Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
-                           nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
+                           <p>I'm just really thankful to have the chance to portray a character you don't see every day.
                            </p>
-                           <cite>Mr. Adobe</cite>
+                           <cite>Regina King</cite>
                         </blockquote>
                      </li> <!-- slide ends -->
 
@@ -668,6 +670,7 @@
 
                <div class="widget widget_contact">
 
+                   <hr />
 					   <h4>Address and Phone</h4>
 					   <p class="address">
 						   Nathan Brathwaite<br>
@@ -676,33 +679,15 @@
 						   <span>1 (246) 268-6398</span>
 					   </p>
 
+                   <hr />
+                   <div>
+                       <iframe height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=1000&amp;hl=en&amp;q=bridgetown+(My%20Business%20Name)&amp;t=&amp;z=11&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+
+                    </iframe><a href="https://www.maps.ie/route-planner.htm">Google Route Planner</a>
+
+
+                   </div>
 				   </div>
-
-               <div class="widget widget_tweets">
-
-                  <h4 class="widget-title">Latest Tweets</h4>
-
-                  <ul id="twitter">
-                     <li>
-                        <span>
-                        This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
-                        Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum
-                        <a href="{% static '#' %}">http://t.co/CGIrdxIlI3</a>
-                        </span>
-                        <b><a href="{% static '#' %}">2 Days Ago</a></b>
-                     </li>
-                     <li>
-                        <span>
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-                        eaque ipsa quae ab illo inventore veritatis et quasi
-                        <a href="{% static '#' %}">http://t.co/CGIrdxIlI3</a>
-                        </span>
-                        <b><a href="{% static '#' %}">3 Days Ago</a></b>
-                     </li>
-                  </ul>
-
-		         </div>
-
             </aside>
 
       </div>
@@ -753,6 +738,24 @@
    <script src="../staticfiles/js/magnific-popup.js"></script>
    <script src="../staticfiles/js/init.js"></script>
 
+<!--Floating button-->
+<script>
+    var btn = $('#topbutton');
+
+$(window).scroll(function() {
+  if ($(window).scrollTop() > 300) {
+    btn.addClass('show');
+  } else {
+    btn.removeClass('show');
+  }
+});
+
+btn.on('click', function(e) {
+  e.preventDefault();
+  $('html, body').animate({scrollTop:0}, '300');
+});
+
+</script>
 </body>
 
 </html>
