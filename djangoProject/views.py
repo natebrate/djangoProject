@@ -3,6 +3,8 @@ from django.core.mail import send_mail
 from django.conf import settings
 
 
+# request pages
+
 def home(request):
     return render(request, 'home.html', {})
 
