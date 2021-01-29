@@ -125,10 +125,15 @@ USE_TZ = True
 
 STATIC_URL = '/staticfiles/'
 
-STATICFILES_DIRS = [
+# For Local Host Testing
+"""STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'staticfiles/')
-]
+]"""
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Heroku settings
+# ROOT_PATH = os.path.dirname(__file__)
 if os.getcwd() == '/app':
     import dj_database_url
 
