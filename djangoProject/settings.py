@@ -126,9 +126,7 @@ USE_TZ = True
 STATIC_URL = '/staticfiles/'
 
 # For Local Host Testing, comment out when hosting to the cloud
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'staticfiles/')
-]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'staticfiles/')]
 
 # remove '#' when hosting to the cloud
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
