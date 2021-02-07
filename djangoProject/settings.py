@@ -125,13 +125,11 @@ USE_TZ = True
 
 STATIC_URL = '/staticfiles/'
 
-# For Local Host Testing, comment out when hosting to the cloud
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'staticfiles/')
-]
+# For Local Host Testing, COMMENT out when hosting to the cloud
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'staticfiles/')]
 
-# remove '#' when hosting to the cloud
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# REMOVE '#' when hosting to the cloud
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Heroku settings
 # ROOT_PATH = os.path.dirname(__file__)
